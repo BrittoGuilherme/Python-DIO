@@ -6,7 +6,7 @@
     
 name = ("Guilherme")
 age = (29)
-print (f"Meu nome é {name}, e eu tenho {age} anos")
+print (f"Meu nome é {name}, e eu tenho {age} anos") # Para usar uma variável concatenada em uma string, é necessário usar a letra F antes do "" dentro do parênteses 
 
     # Variáveis também podem ser declaradas na mesma linha, desde que separadas por virgula, ex.:
 
@@ -26,7 +26,7 @@ print (f"Meu nome é {name}, e eu tenho {age} anos")
 # Assim como as variáveis, constantes são utilizadas para armazenar valores. Uma constante nasce com um valor e permanece com ele até o final da execução do programa, ou seja, o valor é imutável.
 # Python não tem constantes
 # Não existe uma palavra reservada para informar ao interpretador que o valor é constante. Em algumas linguagens por exemplo: Java e C utilizamos final e const, respectivamente para declarar uma constante.
-# Em Python usamos a convenção que diz ao programador  que a variável é uma constante. Para fazer isso, você deve criar a variável com o nome todo em letras maíusculas:
+# Em Python usamos a convenção que diz ao programador  que a variável é uma constante. Para fazer isso, você deve criar a variável com o nome todo em letras maiúsculas:
 
 ABS_PATH = '/home/guilherme/Documents/python_course/'
 DEBUG = True
