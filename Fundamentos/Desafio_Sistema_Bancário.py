@@ -9,11 +9,8 @@ menu = """
 
 Digite a opção desejada => """
 
-valor_deposito = 0
-valor_de_saque = 0
 saldo = 0
 LIMITE = 500
-extrato_deposito = []
 extrato = []
 numero_saques = 0
 LIMITE_SAQUES = 4
