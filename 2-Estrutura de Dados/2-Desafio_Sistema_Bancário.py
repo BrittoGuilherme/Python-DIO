@@ -35,6 +35,7 @@ while True:
     elif opcao == "s":
         
         valor_de_saque = float(input("\nDigite o valor que deseja SACAR: => "))
+        print("\n"+" SAQUE ".center(50, "="))
         
         excedeu_saldo = valor_de_saque > saldo
         
