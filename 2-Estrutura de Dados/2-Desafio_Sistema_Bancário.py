@@ -66,10 +66,6 @@ while True:
         else:
             print ("\nO valor informado é inválido, tente novamente.")    
             
-        if not excedeu_saldo and excedeu_limite and excedeu_saques:
-            print(f"\nSeu saque no valor de: R${valor_de_saque:.2f}, foi efetuado com sucesso!")
-            print(f"\nSeu saldo atual é de: R${saldo:.2f}")
-            
     elif opcao == "e":
         print("\n"+" extrato ".upper().center(50,"="))
         print(" Não foram realizadas movimentações." if not extrato else extrato)
