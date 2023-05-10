@@ -59,10 +59,8 @@ while True:
             saldo -= valor_de_saque
             extrato += (f" Saque: R$ {valor_de_saque:.2f}\n")
             numero_saques += 1
-
-            if not excedeu_saldo:
-                print(f"\nSeu saque no valor de: R${valor_de_saque:.2f}, foi efetuado com sucesso!")
-                print(f"\nSeu saldo atual é de: R${saldo:.2f}")
+            print(f"\nSeu saque no valor de: R${valor_de_saque:.2f}, foi efetuado com sucesso!")
+            print(f"\nSeu saldo atual é de: R${saldo:.2f}")
         else:
             print ("\nO valor informado é inválido, tente novamente.")    
             
