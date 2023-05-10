@@ -1,16 +1,21 @@
 import textwrap
 
+print("\n"+" MENU ".center(50, "="))
+
 def menu():
-    menu = "\n"+" MENU ".center(50, "=")+"""\n
+    menu = """
     [d]\tDepositar
     [s]\tSacar
     [e]\tExtrato
+    [nc]\tNova conta
+    [lc]\tListar contas
     [nu]\tNovo usuário
-
-    [q]\t Sair
-
+    
+    [q]\tSair
+    
     Digite a opção desejada: => """
     return input(textwrap.dedent(menu))
+
 
 def deposito (saldo, valor, extrato, /):
     if valor > 0:
@@ -76,8 +81,26 @@ def verifica_cadastro(cpf, clientes):
     clintes_verificados = [cliente for cliente in clientes if cliente["cpf"] == cpf]
     return clintes_verificados [0] if clintes_verificados else None
 
-
-
+def cadastro_contas(agencia, numero_da_conta, clientes):
+    cpf = input("\nInforme o CPF do cliente (somente número): => ")
+    cliente = verifica_cadastro(cpf, clientes)
+    
+    if cliente:
+        print ("\n"+" Conta criada com sucesso! ".center(50, "="))
+        return {"agencia": agencia, "numero_da_conta": numero_da_conta, "cliente": cliente}
+    
+    print("\n"+" Usuário não encontrado! ".center(50, "="))
+    
+def listar_contas(contas):
+    for conta in contas:
+        mostra_conta = f"""
+            Agência:\t{conta["agencia"]}
+            C/C:\t\t{conta["numero_da_conta"]}
+            Titular:\t{conta["cliente"]["nome"]}
+        """
+        print(textwrap.dedent(mostra_conta))
+        print("=" * 50)
+    
 def main ():
     
     saldo = 0
@@ -87,6 +110,7 @@ def main ():
     limite_saques = 3
     clientes = []
     contas = []
+    AGENCIA = "0001"
         
     while True:
 
@@ -118,6 +142,17 @@ def main ():
         elif opcao == "nu":
             cadastro_clientes(clientes)
             
+        elif opcao == "nc":
+            numero_da_conta = len(contas) + 1
+            conta = cadastro_contas(AGENCIA, numero_da_conta, clientes)
+            
+            if conta:
+                contas.append(conta)
+        
+        elif opcao == "lc":
+            print("\n"+" CONTAS ".center(50, "="))
+            listar_contas(contas)  
+                     
         elif opcao == "q":
             print("\nObrigado por utilizar nossos serviços, até breve!\n")
             break
