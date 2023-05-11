@@ -32,7 +32,33 @@ elif a == "invertebrado":
     elif b == "anelideo" and c == "onivoro":
         print("minhoca")
     
+   # outra forma de fazer
    
+a = input()
+b = input()
+c = input()
+
+dicionario_animais = {
+
+        "vertebrado": {"ave": {"carnivoro": "aguia", "onivoro": "pomba"},
+
+        "mamifero": {"onivoro": "homem", "herbivoro": "vaca"}},
+
+        "invertebrado": {"inseto" : {"hematofago": "pulga", "herbivaro": "lagarta"},
+
+        "anelideo" : {"hematofago": "sanguessuga", "onivoro": "minhoca"  }}  
+
+    }
+
+
+
+def decifrador(a,b,c):
+
+    print(dicionario_animais[a][b][c])
+
+
+
+decifrador(a,b,c)
    
    
    
